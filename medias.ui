@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>722</width>
+    <height>411</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(85, 85, 127);
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>40</y>
+      <width>91</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>30</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QFrame" name="arv_bubble">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>301</width>
+      <height>70</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame{
+	background-color:#88FFFFFF;
+	border-radius:10px;
+
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="title">
+     <property name="geometry">
+      <rect>
+       <x>52</x>
+       <y>3</y>
+       <width>241</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	background:#44FFFFFF;
+}</string>
+     </property>
+     <property name="text">
+      <string>ARV-20062021-1200</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="elapsed_time">
+     <property name="geometry">
+      <rect>
+       <x>52</x>
+       <y>49</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	background:#22FFFFFF;
+	border-radius:8px;
+}</string>
+     </property>
+     <property name="text">
+      <string>00:00</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="total_time">
+     <property name="geometry">
+      <rect>
+       <x>241</x>
+       <y>49</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	background:#22FFFFFF;
+	border-radius:8px;
+}</string>
+     </property>
+     <property name="text">
+      <string>00:00</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="progress">
+     <property name="geometry">
+      <rect>
+       <x>52</x>
+       <y>33</y>
+       <width>241</width>
+       <height>5</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QProgressBar{
+		background-color:#AAC5C5C5;
+		border-radius:2px;
+		border:none;
+		text-align:center;
+}
+
+QProgressBar::chunk{	
+	   background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 52, 93, 255), stop:1 rgba(0, 121, 215, 255));
+		border-radius:2px;
+
+}</string>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
+     </property>
+    </widget>
+    <widget class="QSlider" name="slider">
+     <property name="geometry">
+      <rect>
+       <x>52</x>
+       <y>30</y>
+       <width>241</width>
+       <height>12</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSlider{
+	background:none;
+}
+
+QSlider::groove{
+	background:none;
+	border:none;}
+
+QSlider::handle{
+	height:12px;
+	width:12px;
+    background-color: rgb(0, 121, 215, 255);
+	border-radius:6px;}
+
+QSlider::handle:hover{
+	background-color: rgb(0, 52, 93, 255);}
+
+QSlider::handle:pressed{
+	background-color: rgb(0, 121, 215, 255);}</string>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+     <property name="sliderPosition">
+      <number>0</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="play_button">
+     <property name="geometry">
+      <rect>
+       <x>7</x>
+       <y>16</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	background-image: url(:/cils/cils/cil-media-play.png);
+	background-repeat: no-repeat;
+	background-position:center;
+	border-radius:6px;
+	border:none;
+}</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="record_tip">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>110</y>
+      <width>161</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame{
+	background-color:#88FFFFFF;
+	border-radius:15px;
+
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="record_time">
+     <property name="geometry">
+      <rect>
+       <x>45</x>
+       <y>5</y>
+       <width>71</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel{
+	background:#44FFFFFF;
+	border-radius:none;
+}</string>
+     </property>
+     <property name="text">
+      <string>00:00</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="end_record">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>5</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	image: url(:/cils/cils/cil-media-record-bl.png);
+	background:#00FF00;
+	border-top-left-radius:10px;
+	border-bottom-left-radius:10px;
+}</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="cancel_record">
+     <property name="geometry">
+      <rect>
+       <x>119</x>
+       <y>5</y>
+       <width>31</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton{
+	image: url(:/cils/cils/cil-media-stop-bl.png);
+	background:#FF0000;
+	border-top-right-radius:10px;
+	border-bottom-right-radius:10px;
+}</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QFrame" name="arv_bubble_2">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>220</y>
+      <width>421</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QFrame{
+	background-color:#88FFFFFF;
+	border-radius:10px;
+
+}</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QSlider" name="slider_2">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>30</y>
+       <width>241</width>
+       <height>12</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QSlider{
+	background:none;
+}
+
+QSlider::groove:horizontal{
+	background:none;
+	height:4px;
+	border:none;
+	}
+
+QSlider::handle:horizontal{
+	height:12px;
+	width:12px;
+	border-radius:6px;
+	margin:-4px 10px -4px 10px;
+    background-color: rgb(0, 121, 215, 255);}
+	
+QSlider::handle:hover{
+	background-color: rgb(0, 52, 93, 255);}
+
+QSlider::handle:pressed{
+	background-color: rgb(0, 121, 215, 255);}
+
+QSlider::add-page:horizontal{
+	background-color:grey;}
+
+QSlider::sub-page:horizontal{
+	background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 52, 93, 255), stop:1 rgba(0, 121, 215, 255));}</string>
+     </property>
+     <property name="maximum">
+      <number>100</number>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+     <property name="sliderPosition">
+      <number>0</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>722</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources/img.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>slider</sender>
+   <signal>sliderMoved(int)</signal>
+   <receiver>progress</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>256</x>
+     <y>232</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>256</x>
+     <y>233</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>progress</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>slider</receiver>
+   <slot>setValue(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>204</x>
+     <y>230</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>200</x>
+     <y>227</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>progress</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>label_3</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>390</x>
+     <y>233</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>305</x>
+     <y>338</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

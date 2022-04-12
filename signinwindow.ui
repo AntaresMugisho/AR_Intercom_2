@@ -1,0 +1,1266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SigninWindow</class>
+ <widget class="QWidget" name="SigninWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>275</width>
+    <height>661</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Signin</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/16x16/icons/16x16/cil-user-follow.png</normaloff>:/16x16/icons/16x16/cil-user-follow.png</iconset>
+  </property>
+  <widget class="QStackedWidget" name="stackedWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>45</y>
+     <width>275</width>
+     <height>611</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QStackedWidget{
+	background-color:#FFFFFF;
+	border-bottom-left-radius:12px;
+	border-bottom-right-radius:12px;
+}
+
+
+/* SCROLL BAR */
+            
+QScrollBar:vertical{border: none;background: #CCDDFF;width: 10px; margin: 21px 0 21px 0; border-radius: 0px;}
+
+QScrollBar::handle:vertical{background: #3385CC; min-height: 25px; border-radius: 5px;}
+
+QScrollBar::add-line:vertical{border: none; background: #3385CC;height: 20px;
+            border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;
+            subcontrol-position: bottom; subcontrol-origin: margin;}
+
+QScrollBar::sub-line:vertical{border: none; background: #3385CC; height: 20px;
+            border-top-left-radius: 5px; border-top-right-radius: 5px;
+            subcontrol-position: top;subcontrol-origin: margin;}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical{background: none;}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {background: none;}</string>
+   </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="page">
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <widget class="QFrame" name="central_signin">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>275</width>
+       <height>601</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>275</width>
+       <height>511</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>275</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <widget class="QLabel" name="create_account">
+      <property name="geometry">
+       <rect>
+        <x>-2</x>
+        <y>30</y>
+        <width>280</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);font-size:14px; font-family:Roboto ;
+border-radius:10px;</string>
+      </property>
+      <property name="text">
+       <string>Créez votre compte sans tarder.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QFrame" name="form">
+      <property name="geometry">
+       <rect>
+        <x>2</x>
+        <y>138</y>
+        <width>271</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+background-color: rgba(57, 146, 240, 50);
+border-radius:20px;}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="user_name">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>250</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Saisissez votre nom d'utilisateur.</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	border:2px solid; 
+	border-radius:20px;
+	font-size:18px;
+	padding-left:15px;
+	padding-right:15px; 
+	border-color:#FFF; 
+	background-color:#FFFFFF;}
+
+QLineEdit:hover,  QLineEdit:focus{
+	border-color: rgba(57, 146, 240, 180); 
+}</string>
+       </property>
+       <property name="placeholderText">
+        <string>Nom d'utilisateur</string>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="code">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>67</y>
+         <width>250</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Choisissez votre nom de code.
+Ce nom doit être unique pour chaque compte.</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QComboBox{
+	border:2px solid #FFF; 
+	border-radius:20px;
+	font-size:18px;
+	padding-left:15px;
+	padding-right:15px; 
+	background-color:#FFFFFF;
+	color:#80000000;
+}
+
+QComboBox::drop-down{
+	subcontrol-origin: padding;
+	subcontrol-position: top right;
+	width: 25px;
+	border-left-width: 2px;
+	border-left-style: solid;
+	border-left-color: rgba(57, 146, 240, 180);
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 3px;
+	background-image: url(:cils/cils/cil-arrow-bottom.png);
+	background-position: center;
+	background-repeat: no-reperat;
+}
+
+QComboBox:hover, QComboBox:focus{
+	border-color: rgba(57, 146, 240, 180);
+}
+
+QComboBox QAbstractItemView {
+	color:#000;
+	background-color:#FFF;
+	padding: 10px;
+	selection-color:#3385CC;
+	selection-background-color:#10000000;
+}
+
+
+/* SCROLL BAR */
+            
+QScrollBar:vertical{border: none;background: #CCDDFF;width: 10px; margin: 11px 0 11px 0; border-radius: 0px;}
+
+QScrollBar::handle:vertical{background: #3385CC; min-height: 25px; border-radius: 5px;}
+
+QScrollBar::add-line:vertical{border: none; background: #3385CC;height: 10px;
+            border-bottom-left-radius: 5px; border-bottom-right-radius: 5px;
+            subcontrol-position: bottom; subcontrol-origin: margin;}
+
+QScrollBar::sub-line:vertical{border: none; background: #3385CC; height: 10px;
+            border-top-left-radius: 5px; border-top-right-radius: 5px;
+            subcontrol-position: top;subcontrol-origin: margin;}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical{background: none;}
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {background: none;}</string>
+       </property>
+       <property name="currentText">
+        <string>Nom de code</string>
+       </property>
+       <property name="currentIndex">
+        <number>0</number>
+       </property>
+       <property name="maxVisibleItems">
+        <number>4</number>
+       </property>
+       <property name="frame">
+        <bool>false</bool>
+       </property>
+       <item>
+        <property name="text">
+         <string notr="true">Nom de code</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Alpha</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Bravo</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Charlie</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Delta</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Echo</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>FoxTrot</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Golf</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Hotel</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>India</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Juliet</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Kilo</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Lima</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Mike</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>November</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Oscar</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Papa</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Quebec</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Romeo</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Sierra</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Tango</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Uniform</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Victor</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Whisky</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>X-ray</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Yankee</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Zulu</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QLineEdit" name="passcode">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>121</y>
+         <width>250</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Saisissez votre mot de passe.
+Utilisez un mot de passe facile à retenir.</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	border:2px solid; 
+	border-radius:20px;
+	font-size:18px;
+	padding-left:15px;
+	padding-right:15px; 
+	border-color:#FFF; 
+	background-color:#FFFFFF;}
+
+QLineEdit:hover,  QLineEdit:focus{
+	border-color: rgba(57, 146, 240, 180); 
+}</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::PasswordEchoOnEdit</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Mot de passe</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="passcode2">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>180</y>
+         <width>250</width>
+         <height>40</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>Saisissez de nouveau votre mot de passe.</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLineEdit{
+	border:2px solid; 
+	border-radius:20px;
+	font-size:18px;
+	padding-left:15px;
+	padding-right:15px; 
+	border-color:#FFF; 
+	background-color:#FFFFFF;}
+
+QLineEdit:hover,  QLineEdit:focus{
+	border-color: rgba(57, 146, 240, 180); 
+}</string>
+       </property>
+       <property name="echoMode">
+        <enum>QLineEdit::Password</enum>
+       </property>
+       <property name="placeholderText">
+        <string>Confirmer mot de passe</string>
+       </property>
+      </widget>
+      <zorder>code</zorder>
+      <zorder>user_name</zorder>
+      <zorder>passcode</zorder>
+      <zorder>passcode2</zorder>
+     </widget>
+     <widget class="QLabel" name="logo">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>59</y>
+        <width>271</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(57, 146, 240, 5);
+background-image: url(:/icons/icons/multilogo.png);
+image:url(:/icons/icons/ARsoftlogo.png)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="welcome">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>1</y>
+        <width>281</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(51, 153, 204);
+color: rgb(255, 255, 255);font-size:16px; font-weight:bold; font-family:Roboto ;</string>
+      </property>
+      <property name="text">
+       <string>Bienvenue dans la révolution !</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignHCenter|Qt::AlignTop</set>
+      </property>
+     </widget>
+     <widget class="QFrame" name="image_field">
+      <property name="geometry">
+       <rect>
+        <x>2</x>
+        <y>386</y>
+        <width>270</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+background-color: rgba(57, 146, 240, 50);
+border-radius:20px;
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="choose_profilepicture">
+       <property name="geometry">
+        <rect>
+         <x>64</x>
+         <y>5</y>
+         <width>131</width>
+         <height>131</height>
+        </rect>
+       </property>
+       <property name="toolTip">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Avatar (PRO)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel{
+	border:1px solid #FFF;
+	border-radius:65px;
+	font-size:12px;
+	padding-left:15px;
+	padding-right:15px; 
+	background-color:#FFFFFF;
+	background-image: url(:/cils/cils/cil-user.png);	
+	background-position:center;
+	background-repeat:no-repeat;
+
+}
+
+QLabel:hover,  QFrame:focus{
+	border-color: rgba(57, 146, 240, 180); 
+}</string>
+       </property>
+       <property name="scaledContents">
+        <bool>true</bool>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignBottom|Qt::AlignHCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="next">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>554</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	border:none; 
+	border-radius:20px; 
+	font-size:18px; 
+	font-weight:bold;
+	padding-left:15px;
+	padding-right:15px; 
+	background-color:rgba(57, 146, 240, 180);
+	color:#FFFFFF;
+}
+
+QPushButton:hover{
+	border:2px solid rgba(57, 146, 240, 250); 
+	font-weight:0;
+	background-color:#FFFFFF;
+	color:rgba(57, 146, 240, 250);
+}</string>
+      </property>
+      <property name="text">
+       <string>Suivant</string>
+      </property>
+     </widget>
+     <zorder>logo</zorder>
+     <zorder>form</zorder>
+     <zorder>welcome</zorder>
+     <zorder>create_account</zorder>
+     <zorder>image_field</zorder>
+     <zorder>next</zorder>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_2">
+    <widget class="QFrame" name="central_signin_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>1</y>
+       <width>275</width>
+       <height>601</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>275</width>
+       <height>511</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>275</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">outline:none;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QLabel" name="read_carefuly">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>28</y>
+        <width>275</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);font-size:14px; font-family:Roboto ;
+border-radius:10px;</string>
+      </property>
+      <property name="text">
+       <string>Lisez attentivement ces termes.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="logo_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>57</y>
+        <width>271</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(57, 146, 240, 5);
+background-image: url(:/icons/icons/multilogo.png);
+image:url(:/icons/icons/ARsoftlogo.png)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cgu">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>280</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(51, 153, 204);
+color: rgb(255, 255, 255);font-size:16px; font-weight:bold; font-family:Roboto ;</string>
+      </property>
+      <property name="text">
+       <string>Termes du contrat de licence.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignHCenter|Qt::AlignTop</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="validate">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>554</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	border:none; 
+	border-radius:20px; 
+	font-size:18px; 
+	font-weight:bold;
+	padding-left:15px;
+	padding-right:15px; 
+	background-color:rgba(57, 146, 240, 180);
+	color:#FFFFFF;
+}
+
+QPushButton:hover{
+	border:2px solid rgba(57, 146, 240, 250); 
+	font-weight:0;
+	background-color:#FFFFFF;
+	color:rgba(57, 146, 240, 250);
+}</string>
+      </property>
+      <property name="text">
+       <string>Valider</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="textBrowser">
+      <property name="geometry">
+       <rect>
+        <x>3</x>
+        <y>132</y>
+        <width>270</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser{
+	border-top-right-radius:5px;
+	border-bottom-right-radius:5px;
+	font-size:16px;
+}</string>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:16px; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600;&quot;&gt;CONDITIONS GENERALES D'UTILISATION  DU LOGICIEL &amp;quot;AR Intercom&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600;&quot;&gt;=====================================&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt;Nom 		: AR Intercom&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt;Version	 	: 2.0&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt;Nom de version	: Kivringo&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt;Mise à jour 	: 24-10-2021&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt;Auteur		: Antares Mugisho&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt;E-mail auteur	: antaresmugisho@gmail.com&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt;Editeur		: Art Revolution Label&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt;Site web		: &lt;/span&gt;&lt;a href=&quot;http://www.arintercom.org&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; text-decoration: underline; color:#0000ff;&quot;&gt;www.artrevolution.one&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt;Licence 		: Libre&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600;&quot;&gt;=====================================&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;Article 1&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt; : &lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;Objet&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Les présentes CGU ou Conditions Générales d’Utilisation encadrent juridiquement l’utilisation des services du logiciel de messagerie intannée &amp;quot;&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;AR Intercom&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;&amp;quot; (ci-après dénommé « le logiciel »).&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Constituant le contrat entre la société Art Revolutin Label et le dernier Utilisateur, l’accès au logiciel doit être précédé de l’acceptation de ces CGU. L’accès à cette plateforme signifie l’acceptation des présentes CGU.&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial Narrow','sans-serif'; font-size:12pt; background-color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;Article 2&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt; : &lt;/span&gt;&lt;a href=&quot;https://www.legalplace.fr/guides/mentions-legales/&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600; text-decoration: underline; color:#c00000;&quot;&gt;Mentions légales&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600; color:#c00000;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;L’édition du logiciel Art Revolutuion Intercom est assurée par la société Art Revolution Label inscrite au RCCM, dont le siège social est localisé à Goma, Quartier Katoyi, Av. Bakisi, N°55 dans la Province du Nord-Kivu, en République Démocraique du Congo.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333; background-color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;Article 3&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt; : Accès au logiciel&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Le logiciel AR Intercom est fait pour permettre à l’utilisateur de communiquer gratuitement avec un autre disposant du même logiciel. Les informations échangées peuvent être des textes écrits ou des fichiers multimédia entre autres les images, les médias audio, des médias visuels et autres types de donnée multimédia.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333; background-color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Les services du logiciel sont accessibles gratuitement par tout utilisateur disposant d'abord d'un compte AR intercom puis d’un accès au réseau local de l'entreprise. Tous les frais éventuels nécessaires pour l’accès aux services (matériel informatique, connexion Internet…) sont à la charge de l’utilisateur.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333; background-color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;L’accès aux services dédiés aux utilisateurs s’effectue à l’aide d’un identifiant (Nom d'utilisateur) et d’un mot de passe préalablement définis par l’utilisateur lors de sa première utilisation du logiciel.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333; background-color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Pour des raisons de maintenance ou autres, l’accès au logiciel peut être interrompu ou suspendu par l’éditeur sans préavis ni justification.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333; background-color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;Article 4&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt; : Collecte des données&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Pour la création du compte de l’Utilisateur, la collecte des informations au moment de l’inscription sur le logiciel est nécessaire et obligatoire. Conformément à la loi n°78-17 du 6 janvier relative à l’informatique, aux fichiers et aux libertés, la collecte et le traitement d’informations personnelles s’effectuent dans le respect de la vie privée.&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial Narrow','sans-serif'; font-size:12pt; background-color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Suivant la loi Informatique et Libertés en date du 6 janvier 1978, articles 39 et 40, l’Utilisateur dispose du droit d’accéder, de rectifier, de supprimer et d’opposer ses données personnelles. L’exercice de ce droit s’effectue par le menu &amp;quot;Mon Compte&amp;quot; disponible dans les menus du logiciel.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-size:12pt; background-color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;Article 5&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt; : Propriété intellectuelle&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Les marques, logos ainsi que les contenus du logiciel AR Intercom (illustrations graphiques, textes…) sont protégés par le Code de la propriété intellectuelle et par le droit d’auteur.&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;La reproduction ou la copie des contenus par l’Utilisateur requièrent une autorisation préalable de l'éditeur. Dans ce cas, toute utilisation à des usages commerciaux ou à des fins publicitaires est proscrite.&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; background-color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;Article 6&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt; : Responsabilité&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Bien que les informations échangées entre utilisateurs soient réputées fiables, le logiciel se réserve la faculté d’une non-garantie de la fiabilité des sources.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;En dépit des mises à jour régulières, la responsabilité du logiciel ne peut être engagée en cas de modification des dispositions administratives et juridiques apparaissant après la publication. Il en est de même pour l’utilisation et l’interprétation des informations communiquées sur la plateforme.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Le logiciel décline toute responsabilité concernant les éventuels virus pouvant infecter le matériel informatique de l’Utilisateur après l’utilisation ou l’accès à ce logiciel.&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Le logiciel ne peut être tenu pour responsable en cas de force majeure ou du fait imprévisible et insurmontable d’un tiers.&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Arial Narrow','sans-serif'; font-size:12pt; background-color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;La garantie totale de la sécurité et la confidentialité des données n’est pas assurée par le logiciel. Cependant, le logiciel s’engage à mettre en œuvre toutes les méthodes requises pour le faire au mieux.&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12pt; background-color:#ffffff;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;Article 7&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt; : Liens hypertextes&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Le logiciel peut être constitué de liens hypertextes. En cliquant sur ces derniers, l’Utilisateur sortira de la plateforme. Cette dernière n’a pas de contrôle et ne peut pas être tenue responsable du contenu des pages web relatives à ces liens.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;Article 08&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt; : Durée du contrat&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Le présent contrat est valable pour une durée indéterminée. L'acceptation de ces termes par l'Utilisateur marque l’application du contrat à son égard.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; font-weight:600; color:#333333;&quot;&gt;Article 09&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt; : Droit applicable et juridiction compétente&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;Le présent contrat est soumis à la législation congolaise. L’absence de résolution à l’amiable des cas de litige entre les parties implique le recours aux tribunaux congolais compétents pour régler le contentieux.&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; background-color:#ffffff;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; background-color:#ffffff;&quot;&gt;L'éditeur&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;
+&lt;p align=&quot;right&quot; style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt; color:#333333;&quot;&gt;©&lt;/span&gt;&lt;span style=&quot; font-family:'Arial Narrow','sans-serif'; font-size:12pt;&quot;&gt; 2021, AR Intercom&lt;/span&gt;&lt;span style=&quot; font-size:12pt;&quot;&gt; &lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="iaggree">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>522</y>
+        <width>261</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>J'accepte les termes de ce contrat.</string>
+      </property>
+     </widget>
+     <zorder>logo_2</zorder>
+     <zorder>cgu</zorder>
+     <zorder>read_carefuly</zorder>
+     <zorder>validate</zorder>
+     <zorder>textBrowser</zorder>
+     <zorder>iaggree</zorder>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="page_3">
+    <widget class="QLabel" name="cgu_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>2</y>
+       <width>280</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(51, 153, 204);
+color: rgb(255, 255, 255);font-size:16px; font-weight:bold; font-family:Roboto ;</string>
+     </property>
+     <property name="text">
+      <string>Change log</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignHCenter|Qt::AlignTop</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="read_carefuly_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>30</y>
+       <width>275</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: rgb(0, 0, 0);
+background-color: rgb(255, 255, 255);font-size:14px; font-family:Roboto ;
+border-radius:10px;</string>
+     </property>
+     <property name="text">
+      <string>Quoi de neuf ?</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QFrame" name="whatnews_frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>50</y>
+       <width>275</width>
+       <height>556</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QStackedWidget" name="what_isnew">
+      <property name="geometry">
+       <rect>
+        <x>2</x>
+        <y>0</y>
+        <width>270</width>
+        <height>491</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #FFFFFF;</string>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="w0">
+       <property name="styleSheet">
+        <string notr="true">image: url(:/features/Features/0.png);</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="w1">
+       <property name="styleSheet">
+        <string notr="true">image: url(:/features/Features/1.png);</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="w2">
+       <property name="styleSheet">
+        <string notr="true">image: url(:/features/Features/2.png);</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="w3">
+       <property name="styleSheet">
+        <string notr="true">image: url(:/features/Features/3.png);</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="w4">
+       <property name="styleSheet">
+        <string notr="true">image: url(:/features/Features/4.png);</string>
+       </property>
+      </widget>
+      <widget class="QWidget" name="w5">
+       <property name="styleSheet">
+        <string notr="true">image: url(:/features/Features/5.png);</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="next_feature">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>220</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	border-radius:15px;
+	background-color:#0055FF;
+	background-image: url(:/cils/cils/cil-chevron-circle-right-alt.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="prev_feature">
+      <property name="geometry">
+       <rect>
+        <x>6</x>
+        <y>220</y>
+        <width>30</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	border-radius:15px;
+	background-color:#0055FF;
+	background-image: url(:/cils/cils/cil-chevron-circle-left-alt.png);
+	background-position:center;
+	background-repeat:no-repeat;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="terminate">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>506</y>
+        <width>131</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+	border:none; 
+	border-radius:20px; 
+	font-size:18px; 
+	font-weight:bold;
+	padding-left:15px;
+	padding-right:15px; 
+	background-color:rgba(57, 146, 240, 180);
+	color:#FFFFFF;
+}
+
+QPushButton:hover{
+	border:2px solid rgba(57, 146, 240, 250); 
+	font-weight:0;
+	background-color:#FFFFFF;
+	color:rgba(57, 146, 240, 250);
+}</string>
+      </property>
+      <property name="text">
+       <string>Terminer</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="current_feature">
+      <property name="geometry">
+       <rect>
+        <x>65</x>
+        <y>463</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;
+outline:none;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <property name="leftMargin">
+        <number>0</number>
+       </property>
+       <property name="topMargin">
+        <number>0</number>
+       </property>
+       <property name="rightMargin">
+        <number>0</number>
+       </property>
+       <property name="bottomMargin">
+        <number>0</number>
+       </property>
+       <item>
+        <widget class="QPushButton" name="feature_0">
+         <property name="minimumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color:#EAEAEA;
+	border-radius:7px;
+}
+
+QPushButton:hover{
+	background-color:#3385CC;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="feature_1">
+         <property name="minimumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color:#EAEAEA;
+	border-radius:7px;
+}
+
+QPushButton:hover{
+	background-color:#3385CC;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="feature_2">
+         <property name="minimumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color:#EAEAEA;
+	border-radius:7px;
+}
+
+QPushButton:hover{
+	background-color:#3385CC;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="feature_3">
+         <property name="minimumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color:#EAEAEA;
+	border-radius:7px;
+}
+
+QPushButton:hover{
+	background-color:#3385CC;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="feature_4">
+         <property name="minimumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color:#EAEAEA;
+	border-radius:7px;
+}
+
+QPushButton:hover{
+	background-color:#3385CC;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="feature_5">
+         <property name="minimumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>15</width>
+           <height>15</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton{
+	background-color:#EAEAEA;
+	border-radius:7px;
+}
+
+QPushButton:hover{
+	background-color:#3385CC;
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QLabel" name="main_title">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>4</y>
+     <width>275</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color: rgb(51, 153, 204);
+background-color: rgb(255, 255, 255);
+font-size:20px; 
+font-weight:bold; 
+font-family: Kirvy;
+padding-right:10px;
+border-top-left-radius:12px;
+border-top-right-radius:12px;
+</string>
+   </property>
+   <property name="text">
+    <string>Art Revolution Intercom</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="return_button">
+   <property name="geometry">
+    <rect>
+     <x>2</x>
+     <y>12</y>
+     <width>26</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{
+	image: url(:/cils/cils/cil-arrow-circle-left.png);
+	border-radius:13px;
+	background:none;
+	color:none;
+	border:none;}
+
+QPushButton:hover{
+	background-color:#3399CC;
+}
+
+QPushButton:pressed{
+	background-color:grey;
+}</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources/img.qrc"/>
+ </resources>
+ <connections/>
+</ui>

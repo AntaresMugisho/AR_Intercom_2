@@ -1,0 +1,796 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>LoginWindow</class>
+ <widget class="QMainWindow" name="LoginWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>690</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Connexion - AR Intercom</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="central_log">
+   <widget class="QLineEdit" name="log_username">
+    <property name="geometry">
+     <rect>
+      <x>371</x>
+      <y>160</y>
+      <width>250</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border:2px solid; 
+	border-radius:20px;
+	font-size:18px;
+	padding-left:15px;
+	padding-right:15px; 
+	border-color:#FFF; 
+	background-color:#FFFFFF;}
+
+QLineEdit:hover,  QLineEdit:focus{
+	border-color: rgba(57, 146, 240, 180); 
+}</string>
+    </property>
+    <property name="placeholderText">
+     <string>Nom d'utilisateur</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="log_password">
+    <property name="geometry">
+     <rect>
+      <x>371</x>
+      <y>239</y>
+      <width>250</width>
+      <height>40</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit{
+	border:2px solid; 
+	border-radius:20px;
+	font-size:18px;
+	padding-left:15px;
+	padding-right:15px; 
+	border-color:#FFF; 
+	background-color:#FFFFFF;}
+
+QLineEdit:hover,  QLineEdit:focus{
+	border-color: rgba(57, 146, 240, 180); 
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="echoMode">
+     <enum>QLineEdit::Password</enum>
+    </property>
+    <property name="placeholderText">
+     <string>Mot de passe</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="toogle_button">
+    <property name="geometry">
+     <rect>
+      <x>578</x>
+      <y>248</y>
+      <width>24</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	        image: url(:/cils/cils/cil_vision.png);
+            background:none;
+            border:none;}
+
+QPushButton:hover{
+            image: url(:/cils/cils/cil_low_vision.png);
+            background:none;
+            border:none;}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="connect_log">
+    <property name="geometry">
+     <rect>
+      <x>407</x>
+      <y>337</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+	border:2px solid rgba(57, 146, 240, 250);
+	border-radius:20px; 
+	font-size:18px; 
+	padding-left:15px;
+	padding-right:15px; 
+	background-color:#FFFFFF;
+	color:rgba(57, 146, 240, 250);
+}
+
+QPushButton:hover{
+	font-weight:bold;
+	background-color: rgba(57, 146, 240, 250);
+	color:#FFFFFF;
+}</string>
+    </property>
+    <property name="text">
+     <string>Connexion</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="welcome_log">
+    <property name="geometry">
+     <rect>
+      <x>291</x>
+      <y>42</y>
+      <width>401</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(11, 11, 106);
+color: rgb(255, 255, 255);font-size:16px; font-weight:bold; font-family:Roboto ;</string>
+    </property>
+    <property name="text">
+     <string>Bienvenue  !</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="connect_now">
+    <property name="geometry">
+     <rect>
+      <x>337</x>
+      <y>70</y>
+      <width>301</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);
+;font-size:14px; font-family:Roboto ;
+background-color: rgb(255, 170, 0);
+border-radius:10px;</string>
+    </property>
+    <property name="text">
+     <string>Connectez-vous maintenant.</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="logo_log">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>291</width>
+      <height>83</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-left:4px solid;
+border-left-color: rgb(255, 170, 0);
+background-color: rgb(11, 11, 106);
+image: url(:/icons/icons/ARsoftlogo.png);
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="main_title_log">
+    <property name="geometry">
+     <rect>
+      <x>292</x>
+      <y>0</y>
+      <width>401</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(0, 0, 0);background-color: rgb(255, 255, 255);font-size:20px; font-weight:bold; font-family: Kirvy ,Roboto ;</string>
+    </property>
+    <property name="text">
+     <string>Art Revolution Intercom</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="multi_logo_background">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>79</y>
+      <width>401</width>
+      <height>341</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(57, 146, 240, 5);
+background-image: url(:/icons/icons/multilogo.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QFrame" name="multicolor">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>85</y>
+      <width>291</width>
+      <height>351</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="logo_20">
+     <property name="geometry">
+      <rect>
+       <x>31</x>
+       <y>245</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(246, 168, 202, 200);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_10">
+     <property name="geometry">
+      <rect>
+       <x>106</x>
+       <y>124</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(137, 184, 227, 254);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_4">
+     <property name="geometry">
+      <rect>
+       <x>-1</x>
+       <y>45</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(0, 114, 188);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_12">
+     <property name="geometry">
+      <rect>
+       <x>-1</x>
+       <y>170</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgba(179, 34, 111, 200);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_19">
+     <property name="geometry">
+      <rect>
+       <x>209</x>
+       <y>280</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgba(249, 161, 97, 180);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_13">
+     <property name="geometry">
+      <rect>
+       <x>69</x>
+       <y>180</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(238, 44, 135, 150);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_6">
+     <property name="geometry">
+      <rect>
+       <x>29</x>
+       <y>110</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(78, 59, 151, 150);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_8">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>35</y>
+       <width>101</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 114, 188, 200);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_27">
+     <property name="geometry">
+      <rect>
+       <x>181</x>
+       <y>-1</y>
+       <width>71</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(176, 227, 250, 200);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_25">
+     <property name="geometry">
+      <rect>
+       <x>11</x>
+       <y>-1</y>
+       <width>81</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 100, 200);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_28">
+     <property name="geometry">
+      <rect>
+       <x>229</x>
+       <y>-1</y>
+       <width>61</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(176, 227, 250, 200);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_24">
+     <property name="geometry">
+      <rect>
+       <x>249</x>
+       <y>110</y>
+       <width>41</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(25, 187, 238, 100);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_16">
+     <property name="geometry">
+      <rect>
+       <x>209</x>
+       <y>150</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 176, 76, 150);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_7">
+     <property name="geometry">
+      <rect>
+       <x>187</x>
+       <y>90</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(25, 187, 238, 50);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_14">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>240</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgba(179, 34, 111, 100);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_23">
+     <property name="geometry">
+      <rect>
+       <x>-1</x>
+       <y>0</y>
+       <width>101</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(0, 0, 100, 200);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_22">
+     <property name="geometry">
+      <rect>
+       <x>100</x>
+       <y>300</y>
+       <width>121</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(247, 162, 135, 200);
+background-color: rgba(239, 88, 63, 200);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_17">
+     <property name="geometry">
+      <rect>
+       <x>239</x>
+       <y>200</y>
+       <width>51</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(170, 207, 55, 200);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_9">
+     <property name="geometry">
+      <rect>
+       <x>162</x>
+       <y>60</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(25, 187, 238, 180);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_18">
+     <property name="geometry">
+      <rect>
+       <x>169</x>
+       <y>220</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 240, 0, 160);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_26">
+     <property name="geometry">
+      <rect>
+       <x>91</x>
+       <y>-1</y>
+       <width>91</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(107, 167, 218, 200);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_21">
+     <property name="geometry">
+      <rect>
+       <x>99</x>
+       <y>240</y>
+       <width>81</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(255, 247, 142, 200);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_15">
+     <property name="geometry">
+      <rect>
+       <x>139</x>
+       <y>160</y>
+       <width>81</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(105, 201, 198, 200);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_11">
+     <property name="geometry">
+      <rect>
+       <x>-1</x>
+       <y>90</y>
+       <width>91</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(124, 56, 149, 200);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_5">
+     <property name="geometry">
+      <rect>
+       <x>243</x>
+       <y>34</y>
+       <width>47</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(25, 187, 238, 100);
+</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_29">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>10</y>
+       <width>31</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgba(176, 227, 250, 255);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="logo_30">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>320</y>
+       <width>201</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">
+background-color: rgba(239, 88, 63, 170);</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>420</y>
+      <width>51</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel{
+	color:#C5C5C5;	
+}</string>
+    </property>
+    <property name="text">
+     <string>Kivringo</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="name_warning">
+    <property name="geometry">
+     <rect>
+      <x>391</x>
+      <y>201</y>
+      <width>151</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:red;
+font-size:12px;</string>
+    </property>
+    <property name="text">
+     <string>Empty username</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="psw_warning">
+    <property name="geometry">
+     <rect>
+      <x>391</x>
+      <y>283</y>
+      <width>151</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color:red;
+font-size:12px;</string>
+    </property>
+    <property name="text">
+     <string>Wrong username</string>
+    </property>
+   </widget>
+   <zorder>multi_logo_background</zorder>
+   <zorder>log_username</zorder>
+   <zorder>log_password</zorder>
+   <zorder>toogle_button</zorder>
+   <zorder>connect_log</zorder>
+   <zorder>welcome_log</zorder>
+   <zorder>connect_now</zorder>
+   <zorder>logo_log</zorder>
+   <zorder>main_title_log</zorder>
+   <zorder>multicolor</zorder>
+   <zorder>label</zorder>
+   <zorder>name_warning</zorder>
+   <zorder>psw_warning</zorder>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>690</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="resources/img.qrc"/>
+ </resources>
+ <connections>
+  <connection>
+   <sender>log_password</sender>
+   <signal>returnPressed()</signal>
+   <receiver>connect_log</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>513</x>
+     <y>298</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>509</x>
+     <y>367</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>

@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SplashScreen</class>
+ <widget class="QWidget" name="SplashScreen">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>353</width>
+    <height>336</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>AR Intercom</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>:/AR logo/ARsoftlogo.png</normaloff>:/AR logo/ARsoftlogo.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">border:none;</string>
+  </property>
+  <widget class="QFrame" name="base">
+   <property name="geometry">
+    <rect>
+     <x>3</x>
+     <y>3</y>
+     <width>331</width>
+     <height>301</height>
+    </rect>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QFrame" name="line">
+      <property name="minimumSize">
+       <size>
+        <width>265</width>
+        <height>265</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>265</width>
+        <height>265</height>
+       </size>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QFrame{
+	border-radius:132px;
+	background-color: rgb(255, 255, 255);
+}</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QFrame" name="circular_progress">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>265</width>
+         <height>265</height>
+        </rect>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>160</width>
+         <height>160</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>265</width>
+         <height>265</height>
+        </size>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QFrame{
+border-radius:132px;
+background-color: qconicalgradient(cx:0.5, cy:0.5, angle:90, stop:0.749 rgba(250, 249, 251, 255), stop:
+0.750 rgba(255, 0, 0, 255));
+}</string>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <widget class="QFrame" name="background">
+        <property name="geometry">
+         <rect>
+          <x>7</x>
+          <y>8</y>
+          <width>251</width>
+          <height>251</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>251</width>
+          <height>251</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>251</width>
+          <height>251</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border-radius:125px;
+border:46px solid rgb(0, 59, 89);
+background; white;
+border-color: rgb(79, 0, 0);</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+       </widget>
+       <widget class="QLabel" name="loading">
+        <property name="geometry">
+         <rect>
+          <x>64</x>
+          <y>220</y>
+          <width>141</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>141</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>141</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{	
+	border-radius:5;
+	color: rgba(255, 255, 255, 60);
+	background:none;
+	font-weight:0;
+	font-family:Kirvy-Bold;
+	font-size:12px;
+}</string>
+        </property>
+        <property name="text">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:400;&quot;&gt;Edited by Antares&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="app_name">
+        <property name="geometry">
+         <rect>
+          <x>83</x>
+          <y>26</y>
+          <width>101</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="minimumSize">
+         <size>
+          <width>101</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>101</width>
+          <height>21</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QLabel{	
+	border-radius:5;
+	
+	color:#bbFFFFFF;
+	background-color: rgba(255, 255, 255, 20);
+	font-family:Kirvy-Regular;
+	font-weight:bold;
+	font-size:12px;
+}</string>
+        </property>
+        <property name="text">
+         <string>AR Intercom 2</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="circular_foreground">
+   <property name="geometry">
+    <rect>
+     <x>87</x>
+     <y>72</y>
+     <width>170</width>
+     <height>170</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>170</width>
+     <height>170</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>170</width>
+     <height>170</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">image: url(:/icons/icons/AR_logo.png);
+border:none;</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="resources/img.qrc"/>
+ </resources>
+ <connections/>
+</ui>
